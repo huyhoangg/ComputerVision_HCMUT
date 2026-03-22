@@ -43,12 +43,14 @@ title: Bài Tập Lớn 1
 *Nhóm chọn đi sâu phân tích ở mảng Văn Bản và Đa Phương Thức (Multimodal)*
 
 ### 3.1. Sự Đánh Đổi Tối Ưu Hiệu Quả Mô Hình (Efficiency Trade-off)
-**Sức Rướn Phần Cứng Của Text Classification:**
+**Sức Rướn Phần Cứng Của Text Classification & Kỹ thuật Nén Mô hình (Compression):**
 
-| Cấu trúc Mạng | Khối lượng Tham số | Tốc độ suy luận (1000 mẫu) | Kết luận Thực tiễn (Bản chất sự đánh đổi) |
-| :--- | :--- | :--- | :--- |
-| **Recurrent (Bi-LSTM)** | ~ **3.25 Triệu** | Siêu tốc (~ **0.25s**) | Trọng lượng mạng nhẹ, tiêu biến ít VRAM. Đẩy tốc độ truy xuất tới ngưỡng *Thời gian thực (Real-time)*. Phù hợp tuyệt vời để nén tích hợp lên mạch Edge Devices (ĐTDĐ, IoT). |
-| **Transformer (DistilBERT)** | Khổng lồ (~ **66.3 Triệu**) | Tương đối Chậm | Khối lượng tài nguyên phình to gấp 20 lần, Inference chậm vì cơ chế xử lý ma trận xoay chiều sâu Q-K-V. Đổi lấy khả năng bảo toàn Độ chuẩn xác (Accuracy) cao cực độ tuyệt đối. |
+![Biểu đồ so sánh LSTM vs DistilBERT vs TinyBERT](Bieu_Do_Tradeoff.png) <!-- Ghi chú: Chèn ảnh biểu đồ plot vào đây -->
+
+*Nhận xét biểu đồ (Discussion):*
+1. **Trục Accuracy (Độ chính xác)** cho thấy sự tiến bộ rõ rệt của cơ chế Attention khi các họ Transformer (DistilBERT/TinyBERT) đều đè bẹp LSTM.
+2. Tuy nhiên, đánh đổi lại, **trục Parameter (Dung lượng) và trục Thời gian (Time)** phơi bày sự cồng kềnh khủng khiếp của mạng DistilBERT. Nó nặng gấp hơn 20 lần và chạy chậm hơn gần 20 lần so với LSTM, ngốn cực kỳ nhiều tài nguyên RAM của hệ thống.
+3. Sự xuất hiện của **TinyBERT (Siêu nén)** đã tạo ra tính đột phá về Hiệu Quả Mô Hình (Efficiency): Nó hạ số lượng tham số xuống 4.38 Triệu (Gần bằng LSTM), đem tốc độ Inference chớp nhoáng quay trở lại (chỉ ~6.4s), nhưng vẫn giữ được mức Accuracy cực tốt nhờ kế thừa toàn vẹn tinh hoa của kiến trúc mạng Transformer! Đây chính là cốt lõi của việc nén mô hình (Knowledge Distillation) để Deploy.
 
 **Bấm giờ Sự Bất Cân Bằng Tốc Độ Của Mô Hinh Multimodal (CLIP):** Thực tiễn bấm giờ đếm ngược cho thấy cơ chế "Mắt thần Nhìn Ảnh" (Image Encoder quét 224x224 điểm ảnh màu) tốn nhiều giây xử lý hơn cực kì nhiều so với "Não bộ Đọc Chữ" (Text Encoder Tokenization 77 ký tự chữ). Sự thắt cổ chai suy luận Đa phương thức luôn nằm ở module Nhận Diện Hình Ảnh ViT đồ sộ!
 
@@ -56,10 +58,17 @@ title: Bài Tập Lớn 1
 
 **A. Đấu Trường Lựa Chọn Cấu Trúc Text Classification (Full-FineTune vs Freeze Backbone)**
 
-| Loại Chiến lược Tinh Chỉnh | Vùng Trọng số | Thời lượng đào tạo | Lý giải Hệ quả Đánh Đổi |
-| :--- | :--- | :--- | :--- |
-| **Full Fine-Tuning** | 100% Cấu trúc (~66 Triệu) | Phút - Hàng Giờ | Tiêu hao VRAM nặng nhưng Model tương thích trọn vẹn đặc trưng phân phối ngữ nghĩa cục bộ khiến Accuracy đạt Đỉnh Tối Đa. |
-| **Đóng Băng Xương Sống (Linear Probing)** | Dưới 1% (~600 Ngàn tham số) | Siêu Việt (1-3 phút) | Tính đạo hàm tốc độ bàn thờ giúp học cực kỳ nhanh. Hệ lụy là não bộ "Chống đối" từ chối hòa nhập văn phong Báo chí khiến Điểm số Accuracy bị tụt hạng. Rất lý tưởng cho kế hoạch Xây dựng *Rapid Prototyping (Demo Mẫu Nhanh)*. |
+Để đảm bảo tính công bằng trong thử nghiệm (Fair Comparison), nhóm tiến hành huấn luyện hai chiến lược trên cùng một kiến trúc DistilBERT và cùng lặp chính xác `3 Epochs`. Kết quả đem lại góc nhìn rất sâu sắc về sự đánh đổi (Trade-off):
+
+| Tiêu chí | 1. Fine-tune Toàn bộ (Unfreeze) | 2. Đóng băng Xương sống (Freeze Backbone) |
+| :--- | :--- | :--- |
+| **Cơ chế Huấn luyện** | Rã đông toàn bộ 6 lớp Transformer. Cập nhật mọi ma trận Attention từ đầu đến chân. | Khóa chết thân mạng (Backbone). Chỉ cho phép cập nhật duy nhất lớp phân loại (Classifier) cuối cùng. |
+| **Số tham số Update** | Toàn bộ **~67,000,000** tham số phải được backpropagate. | Trượt dốc thảm hại chỉ còn **605,972** tham số kích hoạt. (Giảm hơn 100 lần hệ số tính toán!) |
+| **Thời gian Train (3 Epochs)** | **Dài nhất** (Ước tính gấp nhiều lần). | Chỉ tốn **550 giây** (~9 phút). Siêu tốc vì Gradient không truyền ngược qua 6 Lớp Transformer. |
+| **Độ chính xác (Accuracy)**| **Chạm Đỉnh Nhất: 0.6980** | **Kẹt Ở Ngưỡng Cụt: 0.6058** |
+
+**Sự kiện "Bức tường kính" (Plateau Effect):** Dù lớp Classifier ở Freeze Backbone đã có hệ số Loss giảm rất đẹp qua từng vòng (`57%` -> `58%` -> `60%`), nó vẫn bị kẹt cứng ở ngưỡng trần **0.6058**, cách một khoảng rất xa so với mức **0.6980** của Fine-tune toàn bộ.
+**Đánh giá:** Bản chất cốt tủy của Wikipedia (dữ liệu pretrained) "khớp lệch" hoàn toàn với văn phong tán gẫu lóng của diễn đàn 20 Newsgroups. Khi "khóa xích" Backbone lại, ta tước đoạt đi khả năng "uốn nắn" ngữ cảnh khiến Classifier "lực bất tòng tâm" không thể vươn xa hơn được. Thậm chí `0.6058` chỉ ngang bằng kỷ lục ban đầu `0.6152` của mạng LSTM cạn truyền thống!
 
 **B. Tuyệt Năng Giải Cứu Dữ Liệu Lệch Lớp ở Hệ Multimodal (Imbalanced Data Reweighting):**
 Tập dữ liệu MM-IMDb vô cùng nghiêng lệch (Thiên kiến đa số). Việc vô tâm huấn luyện Hồi quy Few-Shot ở mức cơ sở vô tình đẩy các thể loại phim Nhỏ Lẻ (Film-Noir, Western...) rơi vào vòng xoáy bị máy tính nuốt trọn bỏ qua do mẫu bé. 
@@ -67,5 +76,9 @@ Tập dữ liệu MM-IMDb vô cùng nghiêng lệch (Thiên kiến đa số). Vi
 
 ### 3.3 Phân Tích Cạm Bẫy Nhiễu Loạn Ngữ Nghĩa Nguyên Sinh (Error Analysis)
 Nhóm lôi cổ những phân loại sai lầm "điển hình kinh điển" ở cả hệ Văn Bản trơn trượt lẫn Đa phương thức:
-- **Cạm bẫy Không Gian Text (Cạnh Tranh Xác Suất):** Hàng loạt chứng cứ trong Notebook phơi bày thực trạng các Cụm `Tôn giáo` và `Vô thần` liên tục bị máy trộn lẫn. Lý giải cho vấn đề mấu chốt đến từ các mốc tự vựng hạt nhân (VD: `"God"`, `"Bible"`) phủ dày ở toàn cõi không gian Dữ liệu của 2 Chủ đề, ép AI (cả Transformer và LSTM) đâm sầm vào nhau vì điểm mù Xác suất Bắt Cặp từ khóa.
-- **Cạm Bẫy Đa Giác Quan Multimodal (Ảnh Lừa Tổ Hợp Chữ):** Có những lúc Não Văn Bản và Não Hình Ảnh của mô hình CLIP cãi vã nhau chan chát. Các Poster Thể Loại Hài Hước (Comedy) có phong cách thiết kế Đâm Chém Troll cực ngầu (Kinh dị - Thriller). Lúc này thị giác máy tính gào thét báo kết quả Thriller dẫn tới Sự cố Chập Mạch Véc-Tơ Dung Hợp (Fused Features Noise), đánh sập cả hệ thống Few-Shot Probing. Đây chính là hệ lụy không thể tránh khỏi của Dữ liệu Nhiễu Phức Tạp Đa phương thức do Tình người đan xen vào máy! Đã có hàng loạt chứng cứ móc mộc văn bản ở Jupyter để trình báo. Mảng Multimodal bị nhiễu do chính cấu trúc mâu thuẫn sinh học!
+- **Cạm bẫy Không Gian Text (Cạnh Tranh Xác Suất Nhóm Phần Cứng/Hardware):** Điển hình nhất là nhóm `comp.os.ms-windows.misc` và `comp.sys.ibm.pc.hardware` có F1-score cực kỳ thấp (LSTM: 0.54, DistilBERT: 0.64) do dùng chung một bộ từ vựng dày đặc (*RAM, drive, disk, CPU*).
+    - **Trường hợp The Generic Text:** Khi gặp văn bản đánh giá chung chung *"like them, good response on service, buying one"*, do thiếu hụt Context vựng chuyên ngành, LSTM bị nhiễu đoán thành `rec.autos` (do từ service), DistilBERT đoán thành `misc.forsale` (do buying one). Cả 2 đều đoán sai nhãn PC Hardware gốc. 
+    - **Trường hợp The Niche Jargon:** Đoản văn quá ngắn nhưng chứa thuật ngữ ngách *"wait states"*. LSTM mất phương hướng đoán thành `baseball`. DistilBERT đoán nhầm sang `sci.crypt` vì lầm tưởng thuật toán.
+    - **Nhưng sự vượt trội của Transfomer (Sự nhầm lẫn từ viết tắt đa nghĩa):** LSTM thấy từ *"models", "LE SE LSE"* liền vội xếp nhãn phần cứng Mac (`mac.hardware` - Macintosh SE). DistilBERT nhờ được Pre-train Wikipedia đã nhận diện cụm *"88-89 bonnevilles"* là siêu xế Pontiac Bonneville nên phân lớp chính xác cực độ vào nhóm ô tô `rec.autos`!
+
+- **Cạm Bẫy Đa Giác Quan Multimodal (Ảnh Lừa Tổ Hợp Chữ):** Có những lúc Não Văn Bản và Não Hình Ảnh của mô hình CLIP cãi vã nhau chan chát. Các Poster Thể Loại Hài Hước (Comedy) có phong cách thiết kế Đâm Chém Troll cực ngầu (Kinh dị - Thriller). Lúc này thị giác máy tính gào thét báo kết quả Thriller dẫn tới Sự cố Chập Mạch Véc-Tơ Dung Hợp (Fused Features Noise), đánh sập cả hệ thống Few-Shot Probing. Mảng Multimodal bị nhiễu do chính cấu trúc mâu thuẫn sinh học!
