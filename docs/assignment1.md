@@ -30,7 +30,7 @@ title: Assignment 1
 ## 💻 SOURCE CODE
 
 - 🔗 **GitHub Repository:**  
-👉 [Xem code tại đây](#https://colab.research.google.com/drive/1Dx8y9QQjvoaXHMDYFWouAm0BXyxn1NEu?usp=sharing)
+👉 [Xem code tại đây](#)
 
 ---
 
@@ -87,6 +87,7 @@ title: Assignment 1
   - Khả năng tổng quát hóa
 
 **Kết quả & phân tích chi tiết nằm trong notebook**
+👉 [Xem tại đây](#https://colab.research.google.com/drive/1Dx8y9QQjvoaXHMDYFWouAm0BXyxn1NEu?usp=sharing)
 
 ---
 
