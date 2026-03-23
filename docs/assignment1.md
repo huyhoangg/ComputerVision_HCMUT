@@ -34,75 +34,169 @@ title: Assignment 1
 
 ---
 
-## 📑 NỘI DUNG BÁO CÁO
+# 📑 NỘI DUNG BÁO CÁO
 
-### 1. 📊 Tìm hiểu bài toán & Dataset (EDA)
-- Mô tả bài toán
-- Giới thiệu dataset (nguồn, kích thước, format)
+---
+
+# 🖼️ 1. IMAGE DATASET (CNN vs ViT)
+
+## 1.1 📊 Bài toán & Dataset (EDA)
+- Mô tả bài toán phân loại ảnh
+- Giới thiệu dataset
 - Phân tích dữ liệu:
-  - Phân phối nhãn
-  - Visualization
-  - Nhận xét ban đầu
+  - Số lượng ảnh mỗi class
+  - Visualization sample
+  - Nhận xét
 
 👉 [Xem chi tiết](#)
 
 ---
 
-### 2. ⚙️ Dataset, Dataloader & Augmentation
-- Data preprocessing
-- Xây dựng Dataset class
-- DataLoader pipeline
-- Các kỹ thuật Augmentation sử dụng
+## 1.2 ⚙️ Dataset, Dataloader & Augmentation
+- Preprocessing ảnh
+- Data augmentation (flip, rotate, normalize,...)
+- Pipeline DataLoader
 
 👉 [Xem chi tiết](#)
 
 ---
 
-### 3. 🤖 Xây dựng, Huấn luyện & Đánh giá mô hình
-- Mô hình sử dụng:
-  - CNN / LSTM / Transformer / Multimodal
-- Kiến trúc mô hình
-- Hyperparameters
-- Training process
-- Evaluation metrics
+## 1.3 🤖 Mô hình & Huấn luyện
+### 🔹 CNN
+- Kiến trúc (ResNet, EfficientNet,...)
+- Fine-tune pretrained
+
+### 🔹 Vision Transformer (ViT)
+- Kiến trúc ViT
+- Fine-tune pretrained
 
 👉 [Xem chi tiết](#)
 
 ---
 
-### 4. 📈 Kết quả thực nghiệm
-- Bảng số liệu (Accuracy, Loss, F1,...)
-- Biểu đồ:
-  - Training/Validation curve
-- So sánh giữa các mô hình
+## 1.4 📈 Kết quả & So sánh
+- Bảng so sánh:
+  - Accuracy
+  - Loss
+- Biểu đồ training
+- So sánh CNN vs ViT
 
 👉 [Xem chi tiết](#)
 
 ---
 
-### 5. 🧠 Phân tích & Thảo luận
-- Nhận xét kết quả
-- Ưu / nhược điểm từng mô hình
-- Nguyên nhân overfitting / underfitting
+## 1.5 🧠 Nhận xét
+- Khi nào CNN tốt hơn?
+- Khi nào ViT tốt hơn?
+
+---
+
+# 📝 2. TEXT DATASET (RNN vs Transformer)
+
+## 2.1 📊 Bài toán & Dataset (EDA)
+- Mô tả bài toán text classification
+- Dataset (ví dụ: 20 Newsgroups)
+- Phân tích:
+  - Độ dài văn bản
+  - Phân phối label
 
 👉 [Xem chi tiết](#)
 
 ---
 
-### 6. 🚀 Mở rộng (Optional)
-- So sánh efficiency:
+## 2.2 ⚙️ Dataset, Dataloader & Preprocessing
+- Tokenization
+- Padding
+- Embedding (GloVe / Word2Vec)
+
+👉 [Xem chi tiết](#)
+
+---
+
+## 2.3 🤖 Mô hình & Huấn luyện
+### 🔹 RNN (LSTM / BiLSTM)
+- Kiến trúc
+- Training
+
+### 🔹 Transformer
+- BERT / DistilBERT
+- Fine-tune
+
+👉 [Xem chi tiết](#)
+
+---
+
+## 2.4 📈 Kết quả & So sánh
+- Accuracy / F1-score
+- So sánh:
+  - RNN vs Transformer
+
+👉 [Xem chi tiết](#)
+
+---
+
+## 2.5 🧠 Nhận xét
+- Ưu nhược điểm từng model
+- Khả năng học long-term dependency
+
+---
+
+# 🔗 3. MULTIMODAL (Zero-shot vs Few-shot)
+
+## 3.1 📊 Bài toán & Dataset
+- Mô tả bài toán đa phương thức
+- Dataset (image + text)
+
+👉 [Xem chi tiết](#)
+
+---
+
+## 3.2 🤖 Phương pháp
+
+### 🔹 Zero-shot Classification
+- Sử dụng model pretrained (CLIP,...)
+- Không cần fine-tune
+
+### 🔹 Few-shot Classification
+- Fine-tune với ít dữ liệu
+- Prompt / adapter / training nhẹ
+
+👉 [Xem chi tiết](#)
+
+---
+
+## 3.3 📈 Kết quả & So sánh
+- So sánh:
+  - Accuracy
+  - Khả năng tổng quát hóa
+- Zero-shot vs Few-shot
+
+👉 [Xem chi tiết](#)
+
+---
+
+## 3.4 ⚡ Efficiency (phần bonus rất quan trọng)
+- So sánh:
   - Accuracy vs Model size
   - Inference time
-- Thử nghiệm:
-  - Pruning
-  - Quantization
-  - Model lightweight (MobileNet, DistilBERT,...)
+- Thử:
+  - Quantization / pruning (nếu có)
 
 👉 [Xem chi tiết](#)
 
 ---
 
-## 📌 TỔNG KẾT
-- Những gì đạt được
+## 3.5 🧠 Nhận xét
+- Khi nào dùng zero-shot?
+- Khi nào cần few-shot?
+
+---
+
+# 📌 TỔNG KẾT
+- Tổng hợp kết quả cả 3 bài toán
+- Insight chính:
+  - CNN vs ViT
+  - RNN vs Transformer
+  - Zero-shot vs Few-shot
 - Hạn chế
-- Hướng phát triển trong tương lai
+- Hướng phát triển
