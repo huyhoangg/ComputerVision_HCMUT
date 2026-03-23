@@ -60,9 +60,6 @@ title: Assignment 1
   - Biểu đồ training
   - Hiệu năng so với mô hình MobileNet
 - [Biểu đồ](https://colab.research.google.com/drive/1TY5PcesLzqQ6m-NxRHBXk3nhmXdXY8PY?usp=sharing)
-- https://colab.research.google.com/drive/1TY5PcesLzqQ6m-NxRHBXk3nhmXdXY8PY?usp=sharing
-
-
 ---
 
 # 2. TEXT DATASET (RNN vs Transformer)
