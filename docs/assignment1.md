@@ -60,7 +60,7 @@ title: Assignment 1
   - Biểu đồ training
 
 👉 **Kết quả & phân tích chi tiết nằm trong notebook**
-
+👉 [Xem tại đây](#https://colab.research.google.com/drive/1Dx8y9QQjvoaXHMDYFWouAm0BXyxn1NEu?usp=sharing)
 ---
 
 # 2. TEXT DATASET (RNN vs Transformer)
@@ -87,7 +87,7 @@ title: Assignment 1
   - Khả năng tổng quát hóa
 
 **Kết quả & phân tích chi tiết nằm trong notebook**
-👉 [Xem tại đây](#https://colab.research.google.com/drive/1Dx8y9QQjvoaXHMDYFWouAm0BXyxn1NEu?usp=sharing)
+
 
 ---
 
