@@ -3,7 +3,7 @@ layout: default
 title: Assignment 1
 ---
 
-# 🧠 BÀI TẬP LỚN SỐ 1  
+# BÀI TẬP LỚN SỐ 1  
 ## Phân loại Ảnh, Văn bản & Đa phương thức
 
 ---
@@ -49,7 +49,7 @@ title: Assignment 1
 
 ---
 
-# 🖼️ 1. IMAGE DATASET (CNN vs ViT)
+# 1. IMAGE DATASET (CNN vs ViT)
 
 - So sánh hai nhóm mô hình:
   - CNN (ResNet, EfficientNet,...)
@@ -63,7 +63,7 @@ title: Assignment 1
 
 ---
 
-# 📝 2. TEXT DATASET (RNN vs Transformer)
+# 2. TEXT DATASET (RNN vs Transformer)
 
 - So sánh hai nhóm mô hình:
   - RNN (LSTM / BiLSTM)
@@ -73,11 +73,11 @@ title: Assignment 1
 - Đánh giá:
   - Accuracy, F1-score
 
-👉 **Kết quả & phân tích chi tiết nằm trong notebook**
+**Kết quả & phân tích chi tiết nằm trong notebook**
 
 ---
 
-# 🔗 3. MULTIMODAL (Zero-shot vs Few-shot)
+# 3. MULTIMODAL (Zero-shot vs Few-shot)
 
 - So sánh hai cách tiếp cận:
   - Zero-shot (CLIP,...)
@@ -86,7 +86,7 @@ title: Assignment 1
   - Accuracy
   - Khả năng tổng quát hóa
 
-👉 **Kết quả & phân tích chi tiết nằm trong notebook**
+**Kết quả & phân tích chi tiết nằm trong notebook**
 
 ---
 
@@ -104,8 +104,3 @@ title: Assignment 1
 - Hạn chế:
   - Dataset nhỏ / chưa đa dạng  
   - Chưa tối ưu hyperparameter toàn diện  
-
-- Hướng phát triển:
-  - Thử model lớn hơn  
-  - Tối ưu efficiency (quantization, pruning)  
-  - Áp dụng vào bài toán thực tế  
