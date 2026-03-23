@@ -45,20 +45,23 @@ title: Assignment 1
 - 🤖 Model Training & Fine-tuning  
 - 📈 Evaluation & Comparison  
 - 🧠 Discussion & Analysis  
-- 🚀 (Optional) Efficiency & Optimization  
 
 ---
 
 # 1. IMAGE DATASET (CNN vs ViT)
 
 - So sánh hai nhóm mô hình:
-  - CNN (ResNet, EfficientNet,...)
+  - CNN (ResNet, MobileNet)
   - Vision Transformer (ViT)
 - Sử dụng pretrained + fine-tune
+- [Pipeline training và evaluation](https://colab.research.google.com/drive/1Dx8y9QQjvoaXHMDYFWouAm0BXyxn1NEu?usp=sharing)
 - Đánh giá và so sánh:
   - Accuracy, Loss
   - Biểu đồ training
-- 👉 [Xem tại đây](https://colab.research.google.com/drive/1Dx8y9QQjvoaXHMDYFWouAm0BXyxn1NEu?usp=sharing)
+  - Hiệu năng so với mô hình MobileNet
+- [Biểu đồ](https://colab.research.google.com/drive/1TY5PcesLzqQ6m-NxRHBXk3nhmXdXY8PY?usp=sharing)
+- https://colab.research.google.com/drive/1TY5PcesLzqQ6m-NxRHBXk3nhmXdXY8PY?usp=sharing
+
 
 ---
 
