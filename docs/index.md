@@ -9,12 +9,11 @@ Chào mừng đến với Landing Page tổng hợp các Bài Tập Lớn chuyê
 Thư mục này đóng vai trò như một Portfolio lưu trữ các dự án học thuật.
 
 ## 👥 THÔNG TIN CHUNG
-- **Nhóm Thực Hiện:** [Nhập Tên Nhóm Vào Đây, ví dụ: Nhóm 01]
+- **Nhóm Thực Hiện:** GROUP_11
 - **Danh sách thành viên:**
-  - [Họ và Tên Thành Viên 1] - [MSSV] 
-  - [Họ và Tên Thành Viên 2] - [MSSV]
-  - [Họ và Tên Thành Viên 3] - [MSSV]
-- **Giảng viên hướng dẫn môn học:** [Tên Giảng Viên Của Bạn]
+  - Nguyễn Huy Hoàng - 2570197
+  - Nguyễn Anh Khoa - 2211612
+- **Giảng viên hướng dẫn môn học:** Lê Thành Sách
 
 ---
 
