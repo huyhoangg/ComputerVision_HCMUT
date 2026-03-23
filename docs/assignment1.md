@@ -58,8 +58,8 @@ title: Assignment 1
 - Đánh giá và so sánh:
   - Accuracy, Loss
   - Biểu đồ training
+- 👉 [Xem tại đây](https://colab.research.google.com/drive/1Dx8y9QQjvoaXHMDYFWouAm0BXyxn1NEu?usp=sharing)
 
-👉 [Xem tại đây](https://colab.research.google.com/drive/1Dx8y9QQjvoaXHMDYFWouAm0BXyxn1NEu?usp=sharing)
 ---
 
 # 2. TEXT DATASET (RNN vs Transformer)
