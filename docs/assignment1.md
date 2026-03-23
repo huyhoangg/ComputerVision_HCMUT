@@ -30,7 +30,7 @@ title: Assignment 1
 ## 💻 SOURCE CODE
 
 - 🔗 **GitHub Repository:**  
-👉 [Xem code tại đây](#)
+👉 [Xem code tại đây](#https://colab.research.google.com/drive/1Dx8y9QQjvoaXHMDYFWouAm0BXyxn1NEu?usp=sharing)
 
 ---
 
