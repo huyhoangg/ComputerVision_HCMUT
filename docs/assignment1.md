@@ -20,10 +20,10 @@ title: Assignment 1
 ## 🎥 DEMO & PRESENTATION
 
 - 🔗 **Video Demo:**  
-👉 [Xem tại đây](#)
+👉 [Xem tại đây](https://github.com/huyhoangg/ComputerVision_HCMUT)
 
 - 🔗 **Video Báo Cáo (YouTube):**  
-👉 [Xem tại đây](#)
+👉 [Xem tại đây](https://youtu.be/ZdF2tTKzBVw?si=Qj_MPWYKR6kgglMU)
 
 ---
 
@@ -35,10 +35,6 @@ title: Assignment 1
 ---
 
 ## 📑 NỘI DUNG BÁO CÁO
-
-- 🔗 **Notebook tổng hợp (EDA + Preprocessing + Training + Evaluation + Comparison + Discussion):**  
-👉 [Xem tại đây](#)
-
 **Nội dung bao gồm:**
 - 📊 Exploratory Data Analysis (EDA)  
 - ⚙️ Dataset, Dataloader & Preprocessing  
@@ -71,8 +67,7 @@ title: Assignment 1
   - Tokenization, Padding, Embedding
 - Đánh giá:
   - Accuracy, F1-score
-
-**Kết quả & phân tích chi tiết nằm trong notebook**
+- [Pipeline training và evaluation](https://colab.research.google.com/drive/1ovVxwUNdwiCuf6oW4HjFr0IOWQXv9A-0?usp=sharing)
 
 ---
 
@@ -84,10 +79,7 @@ title: Assignment 1
 - Đánh giá:
   - Accuracy
   - Khả năng tổng quát hóa
-
-**Kết quả & phân tích chi tiết nằm trong notebook**
-
-
+- [Pipeline training và evaluation](https://colab.research.google.com/drive/1bpuvxkobtwV_2vXgpMnSsEp6ve6LnVNt?usp=sharing)
 ---
 
 # 📌 TỔNG KẾT
