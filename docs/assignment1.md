@@ -40,7 +40,9 @@ title: Assignment 1
 - ⚙️ Dataset, Dataloader & Preprocessing  
 - 🤖 Model Training & Fine-tuning  
 - 📈 Evaluation & Comparison  
-- 🧠 Discussion & Analysis  
+- 🧠 Discussion & Analysis
+- 🧠 Error Analysis
+- 🧠 Tuning Strategy Comparison
 
 ---
 
@@ -64,9 +66,14 @@ title: Assignment 1
   - RNN (LSTM / BiLSTM)
   - Transformer (BERT, DistilBERT,...)
 - Xử lý dữ liệu:
-  - Tokenization, Padding, Embedding
+  - Tokenization, Padding, Embedding (Glove)
 - Đánh giá:
   - Accuracy, F1-score
+- Finetune:
+  - Freeze Backbone, Unfreeze All
+- Hiệu năng các mô hình:
+  - Model size, Infer-time, ...
+- Phân tích lỗi
 - [Pipeline training và evaluation](https://colab.research.google.com/drive/1ovVxwUNdwiCuf6oW4HjFr0IOWQXv9A-0?usp=sharing)
 
 ---
