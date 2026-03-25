@@ -20,7 +20,7 @@ title: Assignment 1
 ## 🎥 DEMO & PRESENTATION
 
 - 🔗 **Video Demo:**  
-
+👉 [Xem tại đây](https://www.youtube.com/watch?v=Wm-K72lYIko)
 
 - 🔗 **Video Báo Cáo (YouTube):**  
 👉 [Xem tại đây](https://youtu.be/ZdF2tTKzBVw?si=Qj_MPWYKR6kgglMU)
