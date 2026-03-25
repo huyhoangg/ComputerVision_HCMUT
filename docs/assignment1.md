@@ -20,7 +20,7 @@ title: Assignment 1
 ## 🎥 DEMO & PRESENTATION
 
 - 🔗 **Video Demo:**  
-👉 [Xem tại đây](https://github.com/huyhoangg/ComputerVision_HCMUT)
+
 
 - 🔗 **Video Báo Cáo (YouTube):**  
 👉 [Xem tại đây](https://youtu.be/ZdF2tTKzBVw?si=Qj_MPWYKR6kgglMU)
@@ -30,7 +30,7 @@ title: Assignment 1
 ## 💻 SOURCE CODE
 
 - 🔗 **GitHub Repository:**  
-👉 [Xem code tại đây](#)
+👉 [Xem tại đây](https://github.com/huyhoangg/ComputerVision_HCMUT)
 
 ---
 
