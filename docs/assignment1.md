@@ -1,7 +1,3 @@
----
-layout: default
-title: Assignment 1
----
 
 # BÀI TẬP LỚN SỐ 1  
 ## Phân loại Ảnh, Văn bản & Đa phương thức
