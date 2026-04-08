@@ -1,7 +1,3 @@
----
-layout: default
-title: Home
----
 
 # 📚 Tổng Hợp Đồ Án Môn Học
 
