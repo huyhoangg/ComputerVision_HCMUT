@@ -26,7 +26,7 @@
 ## 💻 SOURCE CODE
 
 - 🔗 **Kaggle Notebook:**  
-👉 [Xem tại đây](https://www.kaggle.com/code/huyhoangg/assignment-2-object-detection)
+👉 [Xem tại đây](https://www.kaggle.com/code/huyhoangg/assignment-2-object-detection?scriptVersionId=309801781)
 
 ---
 
