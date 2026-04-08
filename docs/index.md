@@ -21,5 +21,4 @@ Chào mừng đến với Landing Page tổng hợp các Bài Tập Lớn Môn X
 Vui lòng bấm vào từng link bên dưới để xem tóm tắt chi tiết hoặc dẫn về Source Code của Bài tập lớn (BTL) tương ứng:
 
 1. [Bài Tập Lớn Số 1: Phân loại Ảnh, Văn bản & Đa phương thức](assignment1.html)
-2. [Bài Tập Lớn Số 2: Tên Dự Kiến (Chưa Mở Khóa)](assignment2.html)
-3. [Bài Tập Lớn Cuối Kỳ: Tên Đề Tài](final_assignment.html)
+2. [Bài Tập Lớn Số 2: Object Detection](assignment2.html)
