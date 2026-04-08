@@ -33,6 +33,6 @@
 ## 📑 NỘI DUNG BÁO CÁO
 
 - 🔗 **Slide báo cáo:**  
-👉 [Xem tại đây]()
+👉 [Xem tại đây](https://drive.google.com/file/d/17l7-mi8gkwRC7_EqB6X1SG6zKOpFl1GY/view?usp=sharing)
 
 ---
